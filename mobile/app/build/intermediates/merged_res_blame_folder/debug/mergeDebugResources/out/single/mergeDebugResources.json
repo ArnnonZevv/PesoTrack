@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "edu.cit.pangan.pesotracker.app-debug-36:/layout_activity_register.xml.flat",
+        "source": "edu.cit.pangan.pesotracker.app-main-38:/layout/activity_register.xml"
+    },
+    {
+        "merged": "edu.cit.pangan.pesotracker.app-debug-36:/layout_activity_dashboard.xml.flat",
+        "source": "edu.cit.pangan.pesotracker.app-main-38:/layout/activity_dashboard.xml"
+    },
+    {
+        "merged": "edu.cit.pangan.pesotracker.app-debug-36:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "edu.cit.pangan.pesotracker.app-main-38:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "edu.cit.pangan.pesotracker.app-debug-36:/layout_activity_login.xml.flat",
+        "source": "edu.cit.pangan.pesotracker.app-main-38:/layout/activity_login.xml"
+    },
+    {
+        "merged": "edu.cit.pangan.pesotracker.app-debug-36:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "edu.cit.pangan.pesotracker.app-main-38:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "edu.cit.pangan.pesotracker.app-debug-36:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "edu.cit.pangan.pesotracker.app-main-38:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "edu.cit.pangan.pesotracker.app-debug-36:/drawable_ic_launcher_background.xml.flat",
+        "source": "edu.cit.pangan.pesotracker.app-main-38:/drawable/ic_launcher_background.xml"
+    }
+]

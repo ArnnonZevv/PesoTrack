@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="forest">#163a2b</color>
+    <color name="forest_light">#1f5138</color>
+    <color name="paper">#f6f3ea</color>
+    <color name="card">#ffffff</color>
+    <color name="gold">#c8973a</color>
+    <color name="gold_dark">#a97c26</color>
+    <color name="border">#e2ddcd</color>
+    <color name="error">#b3402f</color>
+    <color name="ink">#10241c</color>
+    <color name="muted">#56635b</color>
+</resources>

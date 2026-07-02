@@ -1,0 +1,34 @@
+R_DEF: Internal format may change without notice
+local
+color border
+color card
+color error
+color forest
+color forest_light
+color gold
+color gold_dark
+color ink
+color muted
+color paper
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+id btnLogin
+id btnLogout
+id btnRegister
+id etEmail
+id etFullname
+id etPassword
+id etUsername
+id progressBar
+id tvError
+id tvGoLogin
+id tvGoRegister
+id tvSubtitle
+id tvWelcome
+layout activity_dashboard
+layout activity_login
+layout activity_register
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+style Theme.PesoTracker

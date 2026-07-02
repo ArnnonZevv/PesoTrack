@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="border">#e2ddcd</color>
+    <color name="card">#ffffff</color>
+    <color name="error">#b3402f</color>
+    <color name="forest">#163a2b</color>
+    <color name="forest_light">#1f5138</color>
+    <color name="gold">#c8973a</color>
+    <color name="gold_dark">#a97c26</color>
+    <color name="ink">#10241c</color>
+    <color name="muted">#56635b</color>
+    <color name="paper">#f6f3ea</color>
+    <string name="app_name">PesoTracker</string>
+    <style name="Theme.PesoTracker" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/forest</item>
+        <item name="colorPrimaryDark">@color/forest</item>
+        <item name="colorAccent">@color/gold</item>
+        <item name="android:windowBackground">@color/paper</item>
+    </style>
+</resources>
