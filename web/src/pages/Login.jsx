@@ -1,12 +1,10 @@
 import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import client from '../api/client'
-import { useAuth } from '../context/AuthContext'
+import { useNavigate, Link } from 'react-router-dom'
+import axiosInstance from '../api/axiosInstance'
+import styles from './Auth.module.css'
 
 export default function Login() {
-  const navigate = useNavigate()
-  const { login } = useAuth()
-
+  const nav = useNavigate()
   const [form, setForm] = useState({ username: '', password: '' })
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
@@ -18,63 +16,38 @@ export default function Login() {
   async function handleSubmit(e) {
     e.preventDefault()
     setError('')
-    setLoading(true)
+    if (!form.username || !form.password) {
+      setError('Username and password are required.')
+      return
+    }
     try {
-      const res = await client.post('/auth/login', form)
-      login(res.data)
-      navigate('/dashboard')
+      setLoading(true)
+      const res = await axiosInstance.post('/api/auth/login', form)
+      localStorage.setItem('token', res.data.token)
+      localStorage.setItem('username', res.data.username)
+      localStorage.setItem('fullname', res.data.fullname)
+      nav('/')
     } catch (err) {
-      setError(err.response?.data || 'Invalid username or password.')
+      setError(err.response?.data?.message || 'Login failed.')
     } finally {
       setLoading(false)
     }
   }
 
   return (
-    <div className="auth-page">
-      <div className="auth-card">
-        <div className="brand">
-          <span className="brand-mark">₱</span>
-          <span className="brand-name">PesoTracker</span>
-        </div>
-        <h1>Welcome back</h1>
-        <p className="subtitle">Log in to see where your money's been going.</p>
-
-        <form onSubmit={handleSubmit} className="auth-form">
-          <label>
-            Username
-            <input
-              type="text"
-              name="username"
-              value={form.username}
-              onChange={handleChange}
-              placeholder="juandelacruz"
-              required
-            />
-          </label>
-
-          <label>
-            Password
-            <input
-              type="password"
-              name="password"
-              value={form.password}
-              onChange={handleChange}
-              placeholder="Your password"
-              required
-            />
-          </label>
-
-          {error && <p className="error-text">{String(error)}</p>}
-
-          <button type="submit" disabled={loading}>
-            {loading ? 'Logging in…' : 'Log in'}
+    <div className={styles.container}>
+      <div className={styles.card}>
+        <h2 className={styles.title}>PesoTrack</h2>
+        <p className={styles.subtitle}>Log in to your account</p>
+        {error && <p className={styles.error}>{error}</p>}
+        <form onSubmit={handleSubmit}>
+          <input className={styles.input} name="username" placeholder="Username" value={form.username} onChange={handleChange} />
+          <input className={styles.input} name="password" placeholder="Password" value={form.password} onChange={handleChange} type="password" />
+          <button className={styles.btn} disabled={loading}>
+            {loading ? 'Logging in...' : 'Log In'}
           </button>
         </form>
-
-        <p className="switch-link">
-          Don't have an account? <Link to="/register">Create one</Link>
-        </p>
+        <p className={styles.link}>No account? <Link to="/register">Register</Link></p>
       </div>
     </div>
   )

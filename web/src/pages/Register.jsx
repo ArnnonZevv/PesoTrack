@@ -1,18 +1,11 @@
 import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import client from '../api/client'
-import { useAuth } from '../context/AuthContext'
+import { useNavigate, Link } from 'react-router-dom'
+import axiosInstance from '../api/axiosInstance'
+import styles from './Auth.module.css'
 
 export default function Register() {
-  const navigate = useNavigate()
-  const { login } = useAuth()
-
-  const [form, setForm] = useState({
-    fullname: '',
-    email: '',
-    username: '',
-    password: '',
-  })
+  const nav = useNavigate()
+  const [form, setForm] = useState({ fullname: '', email: '', username: '', password: '' })
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
 
@@ -23,88 +16,47 @@ export default function Register() {
   async function handleSubmit(e) {
     e.preventDefault()
     setError('')
-    setLoading(true)
+
+    // Basic client-side validation
+    if (!form.fullname || !form.email || !form.username || !form.password) {
+      setError('All fields are required.')
+      return
+    }
+    if (form.password.length < 6) {
+      setError('Password must be at least 6 characters.')
+      return
+    }
+
     try {
-      const res = await client.post('/auth/register', form)
-      login(res.data)
-      navigate('/dashboard')
+      setLoading(true)
+      const res = await axiosInstance.post('/api/auth/register', form)
+      localStorage.setItem('token', res.data.token)
+      localStorage.setItem('username', res.data.username)
+      localStorage.setItem('fullname', res.data.fullname)
+      nav('/')
     } catch (err) {
-      setError(err.response?.data || 'Registration failed. Please try again.')
+      setError(err.response?.data?.message || 'Registration failed.')
     } finally {
       setLoading(false)
     }
   }
 
   return (
-    <div className="auth-page">
-      <div className="auth-card">
-        <div className="brand">
-          <span className="brand-mark">₱</span>
-          <span className="brand-name">PesoTracker</span>
-        </div>
-        <h1>Create your account</h1>
-        <p className="subtitle">Start tracking every peso in, and every peso out.</p>
-
-        <form onSubmit={handleSubmit} className="auth-form">
-          <label>
-            Full name
-            <input
-              type="text"
-              name="fullname"
-              value={form.fullname}
-              onChange={handleChange}
-              placeholder="Juan Dela Cruz"
-              required
-            />
-          </label>
-
-          <label>
-            Email
-            <input
-              type="email"
-              name="email"
-              value={form.email}
-              onChange={handleChange}
-              placeholder="juan@email.com"
-              required
-            />
-          </label>
-
-          <label>
-            Username
-            <input
-              type="text"
-              name="username"
-              value={form.username}
-              onChange={handleChange}
-              placeholder="juandelacruz"
-              required
-            />
-          </label>
-
-          <label>
-            Password
-            <input
-              type="password"
-              name="password"
-              value={form.password}
-              onChange={handleChange}
-              placeholder="At least 8 characters"
-              minLength={8}
-              required
-            />
-          </label>
-
-          {error && <p className="error-text">{String(error)}</p>}
-
-          <button type="submit" disabled={loading}>
-            {loading ? 'Creating account…' : 'Create account'}
+    <div className={styles.container}>
+      <div className={styles.card}>
+        <h2 className={styles.title}>PesoTrack</h2>
+        <p className={styles.subtitle}>Create an account</p>
+        {error && <p className={styles.error}>{error}</p>}
+        <form onSubmit={handleSubmit}>
+          <input className={styles.input} name="fullname"  placeholder="Full name"  value={form.fullname}  onChange={handleChange} />
+          <input className={styles.input} name="email"     placeholder="Email"      value={form.email}     onChange={handleChange} type="email" />
+          <input className={styles.input} name="username"  placeholder="Username"   value={form.username}  onChange={handleChange} />
+          <input className={styles.input} name="password"  placeholder="Password"   value={form.password}  onChange={handleChange} type="password" />
+          <button className={styles.btn} disabled={loading}>
+            {loading ? 'Registering...' : 'Register'}
           </button>
         </form>
-
-        <p className="switch-link">
-          Already have an account? <Link to="/login">Log in</Link>
-        </p>
+        <p className={styles.link}>Already have an account? <Link to="/login">Log in</Link></p>
       </div>
     </div>
   )
