@@ -2,85 +2,65 @@ package edu.cit.pangan.pesotracker.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import edu.cit.pangan.pesotracker.data.LoginRequest
-import edu.cit.pangan.pesotracker.data.SessionManager
-import edu.cit.pangan.pesotracker.databinding.ActivityLoginBinding
-import edu.cit.pangan.pesotracker.network.RetrofitClient
+import edu.cit.pangan.pesotracker.R
+import edu.cit.pangan.pesotracker.data.models.LoginRequest
+import edu.cit.pangan.pesotracker.data.network.RetrofitClient
+import edu.cit.pangan.pesotracker.utils.SessionManager
 import kotlinx.coroutines.launch
-import java.io.IOException
 
 class LoginActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityLoginBinding
-    private lateinit var sessionManager: SessionManager
+    private lateinit var session: SessionManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityLoginBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_login)
 
-        sessionManager = SessionManager(this)
+        session = SessionManager(this)
 
-        // Already logged in from a previous session? Skip straight to dashboard.
-        if (sessionManager.isLoggedIn()) {
-            goToDashboard()
-            return
-        }
+        val etUsername  = findViewById<EditText>(R.id.etUsername)
+        val etPassword  = findViewById<EditText>(R.id.etPassword)
+        val btnLogin    = findViewById<Button>(R.id.btnLogin)
+        val tvError     = findViewById<TextView>(R.id.tvError)
+        val tvRegister  = findViewById<TextView>(R.id.tvGoToRegister)
 
-        binding.btnLogin.setOnClickListener { attemptLogin() }
-        binding.tvGoRegister.setOnClickListener {
+        tvRegister.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
         }
-    }
 
-    private fun attemptLogin() {
-        val username = binding.etUsername.text.toString().trim()
-        val password = binding.etPassword.text.toString()
+        btnLogin.setOnClickListener {
+            val username = etUsername.text.toString().trim()
+            val password = etPassword.text.toString()
 
-        if (username.isEmpty() || password.isEmpty()) {
-            showError("Please enter your username and password.")
-            return
-        }
+            // Client-side validation
+            if (username.isEmpty() || password.isEmpty()) {
+                tvError.text = "Username and password are required."
+                tvError.visibility = View.VISIBLE
+                return@setOnClickListener
+            }
 
-        setLoading(true)
+            btnLogin.isEnabled  = false
+            tvError.visibility  = View.GONE
 
-        lifecycleScope.launch {
-            try {
-                val response = RetrofitClient.apiService.login(LoginRequest(username, password))
-                setLoading(false)
+            lifecycleScope.launch {
+                try {
+                    val res = RetrofitClient.getService()
+                        .login(LoginRequest(username, password))
 
-                if (response.isSuccessful && response.body() != null) {
-                    sessionManager.saveSession(response.body()!!)
-                    goToDashboard()
-                } else if (response.code() == 401) {
-                    showError("Invalid username or password.")
-                } else {
-                    showError("Login failed (server said: ${response.code()}).")
+                    session.saveSession(res.token, res.username, res.fullname)
+
+                    startActivity(Intent(this@LoginActivity, DashboardActivity::class.java))
+                    finish()
+                } catch (e: Exception) {
+                    tvError.text       = "Invalid username or password."
+                    tvError.visibility = View.VISIBLE
+                    btnLogin.isEnabled = true
                 }
-            } catch (e: IOException) {
-                setLoading(false)
-                showError("Can't reach the server. Is the backend running and BASE_URL correct?")
-            } catch (e: Exception) {
-                setLoading(false)
-                showError("Something went wrong: ${e.message}")
             }
         }
-    }
-
-    private fun goToDashboard() {
-        startActivity(Intent(this, DashboardActivity::class.java))
-        finish()
-    }
-
-    private fun setLoading(loading: Boolean) {
-        binding.progressBar.visibility = if (loading) android.view.View.VISIBLE else android.view.View.GONE
-        binding.btnLogin.isEnabled = !loading
-    }
-
-    private fun showError(message: String) {
-        binding.tvError.text = message
-        binding.tvError.visibility = android.view.View.VISIBLE
     }
 }

@@ -1,135 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/paper"
-    android:fillViewport="true">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:gravity="center"
+    android:padding="32dp" android:background="#F0F4F8">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:padding="32dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="₱ PesoTracker"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="@color/forest"
-            android:layout_marginBottom="4dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Create your account"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="@color/ink"
-            android:layout_marginTop="24dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Start tracking every peso in, and every peso out."
-            android:textSize="14sp"
-            android:textColor="@color/muted"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="24dp" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Full name"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etFullname"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Email"
-            android:layout_marginTop="12dp"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etEmail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textEmailAddress" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Username"
-            android:layout_marginTop="12dp"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etUsername"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Password (min 8 characters)"
-            android:layout_marginTop="12dp"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etPassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <TextView
-            android:id="@+id/tvError"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/error"
-            android:textSize="13sp"
-            android:layout_marginTop="8dp"
-            android:visibility="gone" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnRegister"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Create account"
-            android:textAllCaps="false"
-            android:backgroundTint="@color/forest"
-            android:layout_marginTop="20dp"
-            android:padding="12dp" />
-
-        <ProgressBar
-            android:id="@+id/progressBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:visibility="gone" />
-
-        <TextView
-            android:id="@+id/tvGoLogin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Already have an account? Log in"
-            android:textColor="@color/gold_dark"
-            android:textStyle="bold"
-            android:layout_marginTop="24dp"
-            android:padding="8dp" />
-
-    </LinearLayout>
-</ScrollView>
+    <TextView android:text="PesoTrack" android:textSize="28sp" android:textStyle="bold"
+        android:textColor="#1F3B57" android:layout_marginBottom="8dp"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+    <TextView android:text="Create an account" android:textSize="14sp" android:textColor="#666"
+        android:layout_marginBottom="24dp"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+    <TextView android:id="@+id/tvError" android:textColor="#C0392B" android:textSize="13sp"
+        android:visibility="gone" android:layout_marginBottom="8dp"
+        android:background="#FDF0F0" android:padding="8dp"
+        android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    <EditText android:id="@+id/etFullname" android:hint="Full name"
+        android:inputType="textPersonName" android:layout_marginBottom="12dp"
+        android:background="@drawable/input_bg"
+        android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="12dp"/>
+    <EditText android:id="@+id/etEmail" android:hint="Email"
+        android:inputType="textEmailAddress" android:layout_marginBottom="12dp"
+        android:background="@drawable/input_bg"
+        android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="12dp"/>
+    <EditText android:id="@+id/etUsername" android:hint="Username"
+        android:inputType="text" android:layout_marginBottom="12dp"
+        android:background="@drawable/input_bg"
+        android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="12dp"/>
+    <EditText android:id="@+id/etPassword" android:hint="Password"
+        android:inputType="textPassword" android:layout_marginBottom="16dp"
+        android:background="@drawable/input_bg"
+        android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="12dp"/>
+    <Button android:id="@+id/btnRegister" android:text="Register"
+        android:backgroundTint="#1F3B57" android:textColor="@android:color/white"
+        android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    <TextView android:id="@+id/tvGoToLogin" android:text="Already have an account? Log in"
+        android:textColor="#1F3B57" android:textSize="13sp" android:gravity="center"
+        android:layout_marginTop="16dp" android:padding="4dp"
+        android:layout_width="match_parent" android:layout_height="wrap_content"/>
+</LinearLayout>
