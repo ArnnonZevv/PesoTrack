@@ -1,0 +1,10 @@
+.card { display: flex; justify-content: space-between; align-items: center; background: white; border-radius: 10px; padding: 1rem 1.25rem; box-shadow: 0 1px 6px rgba(0,0,0,0.07); }
+.left  { display: flex; flex-direction: column; gap: 0.3rem; }
+.right { display: flex; flex-direction: column; align-items: flex-end; gap: 0.5rem; }
+.category { font-size: 0.78rem; font-weight: 600; padding: 0.2rem 0.6rem; border-radius: 20px; color: #333; width: fit-content; }
+.date   { font-size: 0.82rem; color: #888; }
+.note   { font-size: 0.85rem; color: #555; font-style: italic; }
+.amount { font-size: 1.3rem; font-weight: 700; color: #1f3b57; }
+.actions { display: flex; gap: 0.5rem; }
+.editBtn   { background: #eef3fa; border: 1px solid #ccd6e0; color: #1f3b57; padding: 0.25rem 0.7rem; border-radius: 6px; cursor: pointer; font-size: 0.82rem; font-weight: 600; }
+.deleteBtn { background: #fdf0f0; border: 1px solid #e8cccc; color: #c0392b; padding: 0.25rem 0.7rem; border-radius: 6px; cursor: pointer; font-size: 0.82rem; font-weight: 600; }
