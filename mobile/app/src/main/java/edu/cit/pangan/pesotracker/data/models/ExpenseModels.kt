@@ -1,4 +1,4 @@
-package edu.cit.pangan.pesotrack.data.models
+package edu.cit.pangan.pesotracker.data.models
 
 data class ExpenseRequest(
     val amount: Double,

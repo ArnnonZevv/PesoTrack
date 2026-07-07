@@ -1,4 +1,4 @@
-package edu.cit.pangan.pesotrack.data.models
+package edu.cit.pangan.pesotracker.data.models
 
 data class LoginRequest(val username: String, val password: String)
 data class RegisterRequest(val fullname: String, val email: String, val username: String, val password: String)
