@@ -1,4 +1,4 @@
-package edu.cit.pangan.hellosummer.security;
+package edu.cit.pangan.hellosummer.shared.security;
 
 import io.jsonwebtoken.Claims;
 import jakarta.servlet.FilterChain;
@@ -15,13 +15,6 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import java.io.IOException;
 import java.util.List;
 
-/**
- * Runs once per request. If a valid "Authorization: Bearer <token>" header
- * is present, marks the request as authenticated so controllers can use
- * @AuthenticationPrincipal to find out which user is calling. Both the
- * React app and the Android app authenticate against this same filter,
- * since they hit the same backend.
- */
 @Component
 public class JwtAuthFilter extends OncePerRequestFilter {
 
@@ -32,9 +25,10 @@ public class JwtAuthFilter extends OncePerRequestFilter {
     }
 
     @Override
-    protected void doFilterInternal(@NonNull HttpServletRequest request,
+    protected void doFilterInternal(@NonNull HttpServletRequest  request,
                                     @NonNull HttpServletResponse response,
-                                    @NonNull FilterChain filterChain) throws ServletException, IOException {
+                                    @NonNull FilterChain         chain)
+            throws ServletException, IOException {
 
         String header = request.getHeader("Authorization");
 
@@ -42,21 +36,20 @@ public class JwtAuthFilter extends OncePerRequestFilter {
             String token = header.substring(7);
 
             if (jwtUtil.isValid(token)) {
-                Claims claims = jwtUtil.parseClaims(token);
-
+                Claims claims   = jwtUtil.parseClaims(token);
                 String username = claims.getSubject();
-                Long userId = claims.get("userId", Long.class);
-                String role = claims.get("role", String.class);
+                Long   userId   = claims.get("userId", Long.class);
+                String role     = claims.get("role",   String.class);
 
-                AuthenticatedUser principal = new AuthenticatedUser(userId, username, role);
-
+                var principal  = new AuthenticatedUser(userId, username, role);
                 var authorities = List.of(new SimpleGrantedAuthority("ROLE_" + role));
-                var authToken = new UsernamePasswordAuthenticationToken(principal, null, authorities);
+                var authToken  = new UsernamePasswordAuthenticationToken(
+                                        principal, null, authorities);
 
                 SecurityContextHolder.getContext().setAuthentication(authToken);
             }
         }
 
-        filterChain.doFilter(request, response);
+        chain.doFilter(request, response);
     }
 }

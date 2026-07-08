@@ -1,4 +1,4 @@
-package edu.cit.pangan.hellosummer.security;
+package edu.cit.pangan.hellosummer.shared.security;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;
@@ -18,26 +18,23 @@ public class JwtUtil {
     @Value("${jwt.secret}")
     private String secret;
 
-    @Value("${jwt.expiration-ms:86400000}") // default: 24 hours
+    @Value("${jwt.expiration-ms:86400000}")
     private long expirationMs;
 
     private SecretKey key;
 
     @PostConstruct
     public void init() {
-        // HMAC-SHA needs a key of at least 256 bits (32 bytes) — make sure
-        // jwt.secret in application.properties is long enough.
         this.key = Keys.hmacShaKeyFor(secret.getBytes(StandardCharsets.UTF_8));
     }
 
     public String generateToken(Long userId, String username, String role) {
-        Date now = new Date();
+        Date now    = new Date();
         Date expiry = new Date(now.getTime() + expirationMs);
-
         return Jwts.builder()
                 .subject(username)
                 .claim("userId", userId)
-                .claim("role", role)
+                .claim("role",   role)
                 .issuedAt(now)
                 .expiration(expiry)
                 .signWith(key)

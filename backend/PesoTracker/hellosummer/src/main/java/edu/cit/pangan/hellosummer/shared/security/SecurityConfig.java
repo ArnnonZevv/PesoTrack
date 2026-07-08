@@ -1,6 +1,5 @@
-package edu.cit.pangan.hellosummer.config;
+package edu.cit.pangan.hellosummer.shared.security;
 
-import edu.cit.pangan.hellosummer.security.JwtAuthFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -34,29 +33,24 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .csrf(csrf -> csrf.disable())
-                .cors(cors -> cors.configurationSource(corsConfigurationSource()))
-                .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/auth/**").permitAll()
-                        .anyRequest().authenticated()
-                )
-                .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
+            .csrf(csrf -> csrf.disable())
+            .cors(cors -> cors.configurationSource(corsConfigurationSource()))
+            .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/api/auth/**").permitAll()
+                .anyRequest().authenticated()
+            )
+            .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }
 
-    /**
-     * Allows the React app (local dev server + deployed Vercel domain) to call
-     * this API from the browser. The Android app doesn't need CORS since it's
-     * not a browser, but this is required for the web client to work at all.
-     */
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowedOriginPatterns(List.of(
-                "http://localhost:3000",
-                "https://*.vercel.app"
+            "http://localhost:3000",
+            "https://*.vercel.app"
         ));
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         config.setAllowedHeaders(List.of("*"));

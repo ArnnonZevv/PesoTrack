@@ -1,6 +1,6 @@
-package edu.cit.pangan.hellosummer.repository;
+package edu.cit.pangan.hellosummer.shared.repository;
 
-import edu.cit.pangan.hellosummer.entities.User;
+import edu.cit.pangan.hellosummer.shared.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
