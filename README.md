@@ -47,7 +47,7 @@ Students often track expenses informally — in messaging apps, on scratch paper
 | Layer      | Technology                                      |
 |------------|--------------------------------------------------|
 | Backend    | Java, Spring Boot, Spring Data JPA, Spring Security |
-| Database   | MySQL |
+| Database   | PostgreSQL (hosted on Supabase) |
 | Web        | ReactJS, Axios, Node.js |
 | Mobile     | Android Studio, Kotlin, Retrofit |
 | Deployment | Render (backend), Vercel (web app) |
@@ -56,15 +56,34 @@ Students often track expenses informally — in messaging apps, on scratch paper
 ## Project Structure
 
 ```
-Replace
+PesoTrack/
+├── backend/
+│   └── PesoTracker/hellosummer/        # Spring Boot REST API (Maven project)
+│       └── src/main/java/edu/cit/pangan/hellosummer/
+│           ├── feature/
+│           │   ├── auth/login/          # LoginController, LoginService, LoginRequest/Response
+│           │   ├── auth/register/       # RegisterController, RegisterService, RegisterRequest/Response
+│           │   ├── expense/add/         # AddExpenseController, AddExpenseService, ...
+│           │   ├── expense/edit/        # EditExpenseController, EditExpenseService, ...
+│           │   ├── expense/delete/      # DeleteExpenseController, DeleteExpenseService
+│           │   ├── expense/view/        # ViewExpensesController, ViewExpensesService, ExpenseItem
+│           │   └── users/list/          # ListUsersController, ListUsersService, UserSummary
+│           └── shared/
+│               ├── entity/              # User, Expense (JPA entities)
+│               ├── repository/          # UserRepository, ExpenseRepository
+│               └── security/            # JwtUtil, JwtAuthFilter, SecurityConfig, AuthenticatedUser
+├── web/                                 # ReactJS web application (Vite)
+│   └── src/
+│       ├── pages/                       # Login, Register, Dashboard
+│       ├── components/                  # ExpenseForm, ExpenseCard
+│       └── api/                         # axiosInstance (JWT-attaching Axios client)
+└── mobile/                              # Android (Kotlin) application
+    └── app/src/main/java/edu/cit/pangan/pesotracker/
+        ├── ui/                          # LoginActivity, RegisterActivity, DashboardActivity, AddEditExpenseActivity, ExpenseAdapter
+        ├── data/network/                # ApiService (Retrofit), RetrofitClient
+        ├── data/models/                 # Models.kt (request/response data classes)
+        └── utils/                       # SessionManager
 ```
-> Replace this block with your actual repository layout, e.g.:
-> ```
-> pesotrack/
-> ├── backend/     # Spring Boot REST API
-> ├── web/         # ReactJS web application
-> └── mobile/      # Android (Kotlin) application
-> ```
 
 ## Getting Started
 
@@ -73,40 +92,46 @@ Replace
 - Java 17+ and Maven
 - Node.js and npm
 - Android Studio (for the mobile app)
-- MySQL instance (local or hosted)
+- A PostgreSQL instance (e.g. a free [Supabase](https://supabase.com) project, or local Postgres)
 
 ### Backend Setup
 
 ```bash
-cd backend
-Replace
+cd backend/PesoTracker/hellosummer
+export DB_URL=jdbc:postgresql://<your-host>:5432/postgres
+export DB_USERNAME=postgres
+export DB_PASSWORD=<your-db-password>
+export JWT_SECRET=<a-long-random-256-bit-string>
+./mvnw spring-boot:run
 ```
-> Replace with actual setup/run commands, e.g. `./mvnw spring-boot:run`. The backend runs on `http://localhost:Replace` by default.
+The backend runs on `http://localhost:8080` by default. Tables are created/updated automatically on startup (`spring.jpa.hibernate.ddl-auto=update`).
 
 ### Web App Setup
 
 ```bash
 cd web
 npm install
-npm start
+npm run dev
 ```
-> Replace port/URL details as needed. The web app runs on `http://localhost:Replace` by default.
+Create a `.env` file in `web/` with `VITE_API_URL=http://localhost:8080` pointing at the backend. The web app runs on `http://localhost:5173` by default (Vite's default dev port).
 
 ### Mobile App Setup
 
 1. Open the `mobile/` folder in Android Studio.
-2. Replace the base API URL in the app's network configuration with your backend URL.
+2. Set `BASE_URL` in `RetrofitClient.kt` (`app/src/main/java/edu/cit/pangan/pesotracker/data/network/RetrofitClient.kt`) to your backend URL. It defaults to `http://10.0.2.2:8080/`, which lets the Android emulator reach a backend running on your PC's `localhost`. On a physical device on the same Wi-Fi, use your PC's local IP instead (e.g. `http://192.168.1.x:8080/`).
 3. Build and run on an emulator or device running Android 8.0 (Oreo) or later.
 
 ## Environment Variables
 
 | Variable          | Description                          | Example        |
 |--------------------|---------------------------------------|-----------------|
-| `DB_URL`           | Database connection URL              | Replace |
-| `DB_USERNAME`      | Database username                    | Replace |
-| `DB_PASSWORD`      | Database password                    | Replace |
-| `JWT_SECRET`       | Secret key used to sign JWT tokens   | Replace |
-| `JWT_EXPIRATION`   | Token expiration time (ms)           | Replace |
+| `DB_URL`           | Database connection URL              | `jdbc:postgresql://db.<project-ref>.supabase.co:5432/postgres` |
+| `DB_USERNAME`      | Database username                    | `postgres` |
+| `DB_PASSWORD`      | Database password                    | your Supabase/Postgres password |
+| `JWT_SECRET`       | Secret key used to sign JWT tokens   | any long random string (256 bits recommended) |
+| `jwt.expiration-ms`| Token expiration time (ms), set in `application.properties` | `86400000` (24 hours) — defaults to this value if unset |
+
+> Note: the codebase reads these as `DB_URL`, `DB_USERNAME`, `DB_PASSWORD`, and `JWT_SECRET` (see `application.properties`). Token expiration is configured via the `jwt.expiration-ms` property rather than a separate `JWT_EXPIRATION` env var, and already defaults to 24 hours if not overridden.
 
 ## API Overview
 
@@ -114,12 +139,13 @@ npm start
 |--------|-----------------------|---------------------------------|----------------|
 | POST   | `/api/auth/register`  | Register a new user            | No             |
 | POST   | `/api/auth/login`     | Log in and receive a JWT token | No             |
-| GET    | `/api/expenses`       | List the logged-in user's expenses | Yes        |
+| GET    | `/api/expenses`       | List the logged-in user's expenses (newest first) | Yes |
 | POST   | `/api/expenses`       | Add a new expense              | Yes            |
-| PUT    | `/api/expenses/{id}`  | Edit an existing expense       | Yes            |
-| DELETE | `/api/expenses/{id}`  | Delete an expense              | Yes            |
+| PUT    | `/api/expenses/{id}`  | Edit an existing expense (must belong to the logged-in user) | Yes |
+| DELETE | `/api/expenses/{id}`  | Delete an expense (must belong to the logged-in user) | Yes |
+| GET    | `/api/users`          | List all registered users (admin/reference use) | Yes |
 
-> Replace with actual endpoint paths and request/response payloads once finalized.
+All authenticated endpoints expect an `Authorization: Bearer <token>` header, where `<token>` is the JWT returned by `/api/auth/login` or `/api/auth/register`.
 
 ## Database Schema
 
@@ -143,8 +169,11 @@ One `User` has zero or many `Expense` records; each `Expense` belongs to exactly
 
 ## Deployment
 
-- **Backend:** Deployed on Render — Replace
-- **Web App:** Deployed on Vercel — Replace
+Deployment targets are configured but the app has not been deployed to a live URL yet — it currently runs locally for development.
+
+- **Backend:** Intended for Render. `web/.env.production` already points `VITE_API_URL` at a placeholder Render URL (`https://your-backend.onrender.com`) to be replaced once the backend is deployed.
+- **Web App:** Intended for Vercel, built with `npm run build` (outputs to `web/dist`).
+- **Database:** Supabase-hosted PostgreSQL (see `application.properties`), reachable from both local and deployed backends via the `DB_URL`/`DB_USERNAME`/`DB_PASSWORD` environment variables.
 
 ## Limitations / Out of Scope
 
@@ -157,4 +186,4 @@ This initial version does not include:
 
 ## License
 
-Replace (e.g., MIT, or "Academic project — not licensed for external use")
+Academic project — developed for course requirements at Cebu Institute of Technology University and not licensed for external/commercial use.
