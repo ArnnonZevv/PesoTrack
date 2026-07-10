@@ -2,40 +2,95 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:layout_marginBottom="8dp"
-    app:cardCornerRadius="10dp" app:cardElevation="2dp">
+    app:cardCornerRadius="10dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="@android:color/white">
 
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:orientation="horizontal" android:padding="14dp" android:gravity="center_vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="14dp"
+        android:gravity="center_vertical">
 
-        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
-            android:layout_weight="1" android:orientation="vertical">
-            <TextView android:id="@+id/tvCategory" android:textSize="13sp" android:textStyle="bold"
-                android:textColor="#1F3B57"
-                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-            <TextView android:id="@+id/tvDate" android:textSize="12sp" android:textColor="#888"
-                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-            <TextView android:id="@+id/tvNote" android:textSize="12sp" android:textColor="#555"
+        <!-- Left: category, date, note -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="#1F3B57"/>
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="#888888"
+                android:layout_marginTop="2dp"/>
+
+            <TextView
+                android:id="@+id/tvNote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="#555555"
                 android:fontFamily="sans-serif-light"
-                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                android:layout_marginTop="2dp"/>
         </LinearLayout>
 
-        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:orientation="vertical" android:gravity="end">
-            <TextView android:id="@+id/tvAmount" android:textSize="16sp" android:textStyle="bold"
-                android:textColor="#1F3B57" android:gravity="end"
-                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:orientation="horizontal" android:layout_marginTop="6dp">
-                <Button android:id="@+id/btnEdit" android:text="Edit"
-                    android:textSize="11sp" android:padding="4dp"
-                    android:backgroundTint="#EEF3FA" android:textColor="#1F3B57"
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-                <Button android:id="@+id/btnDelete" android:text="Delete"
-                    android:textSize="11sp" android:padding="4dp" android:layout_marginStart="4dp"
-                    android:backgroundTint="#FDF0F0" android:textColor="#C0392B"
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <!-- Right: amount, edit/delete buttons -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="end">
+
+            <TextView
+                android:id="@+id/tvAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="#1F3B57"
+                android:gravity="end"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="6dp">
+
+                <Button
+                    android:id="@+id/btnEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Edit"
+                    android:textSize="11sp"
+                    android:padding="4dp"
+                    android:backgroundTint="#EEF3FA"
+                    android:textColor="#1F3B57"/>
+
+                <Button
+                    android:id="@+id/btnDelete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Delete"
+                    android:textSize="11sp"
+                    android:padding="4dp"
+                    android:layout_marginStart="4dp"
+                    android:backgroundTint="#FDF0F0"
+                    android:textColor="#C0392B"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

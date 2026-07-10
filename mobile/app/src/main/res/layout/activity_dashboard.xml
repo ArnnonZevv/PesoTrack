@@ -2,40 +2,87 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="#F0F4F8">
 
-    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:orientation="horizontal" android:background="#1F3B57"
-            android:padding="16dp" android:gravity="center_vertical">
-            <TextView android:id="@+id/tvWelcome" android:textColor="@android:color/white"
-                android:textSize="16sp" android:textStyle="bold"
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#1F3B57"
+            android:padding="16dp"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_width="0dp" android:layout_height="wrap_content"/>
-            <Button android:id="@+id/btnLogout" android:text="Log Out"
-                android:textSize="12sp" android:textColor="@android:color/white"
-                android:backgroundTint="@android:color/transparent"
-                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvWelcome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/tvTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#BBDDFF"
+                    android:textSize="12sp"
+                    android:layout_marginTop="2dp"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnLogout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Log Out"
+                android:textSize="12sp"
+                android:textColor="@android:color/white"
+                android:backgroundTint="@android:color/transparent"/>
         </LinearLayout>
 
-        <TextView android:id="@+id/tvEmpty" android:text="No expenses yet. Tap + to add one."
-            android:gravity="center" android:textColor="#999" android:textSize="14sp"
-            android:visibility="gone" android:layout_marginTop="64dp"
-            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <!-- Empty state -->
+        <TextView
+            android:id="@+id/tvEmpty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No expenses yet. Tap + to add one."
+            android:gravity="center"
+            android:textColor="#999999"
+            android:textSize="14sp"
+            android:visibility="gone"
+            android:layout_marginTop="80dp"/>
 
-        <androidx.recyclerview.widget.RecyclerView android:id="@+id/rvExpenses"
-            android:padding="12dp" android:clipToPadding="false"
-            android:layout_width="match_parent" android:layout_height="match_parent"/>
+        <!-- Expense list -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvExpenses"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="12dp"
+            android:clipToPadding="false"/>
     </LinearLayout>
 
+    <!-- FAB -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabAdd" android:src="@android:drawable/ic_input_add"
-        android:contentDescription="Add Expense"
-        app:backgroundTint="#1F3B57"
+        android:id="@+id/fabAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="20dp"
-        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        android:contentDescription="Add Expense"
+        android:src="@android:drawable/ic_input_add"
+        app:backgroundTint="#1F3B57"/>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
