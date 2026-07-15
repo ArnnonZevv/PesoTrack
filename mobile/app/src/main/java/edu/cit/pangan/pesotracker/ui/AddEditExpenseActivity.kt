@@ -1,5 +1,6 @@
 package edu.cit.pangan.pesotracker.ui
 
+import android.app.DatePickerDialog
 import android.os.Bundle
 import android.view.View
 import android.widget.*
@@ -10,7 +11,7 @@ import edu.cit.pangan.pesotracker.data.models.ExpenseRequest
 import edu.cit.pangan.pesotracker.data.network.RetrofitClient
 import edu.cit.pangan.pesotracker.utils.SessionManager
 import kotlinx.coroutines.launch
-import java.time.LocalDate
+import java.util.Calendar
 
 class AddEditExpenseActivity : AppCompatActivity() {
 
@@ -20,19 +21,18 @@ class AddEditExpenseActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_edit_expense)
 
-        val tvTitle     = findViewById<TextView>(R.id.tvTitle)
-        val etAmount    = findViewById<EditText>(R.id.etAmount)
-        val spinnerCat  = findViewById<Spinner>(R.id.spinnerCategory)
-        val etDate      = findViewById<EditText>(R.id.etDate)
-        val etNote      = findViewById<EditText>(R.id.etNote)
-        val btnSave     = findViewById<Button>(R.id.btnSave)
-        val tvError     = findViewById<TextView>(R.id.tvError)
+        val tvTitle    = findViewById<TextView>(R.id.tvTitle)
+        val etAmount   = findViewById<EditText>(R.id.etAmount)
+        val spinnerCat = findViewById<Spinner>(R.id.spinnerCategory)
+        val etDate     = findViewById<EditText>(R.id.etDate)
+        val etNote     = findViewById<EditText>(R.id.etNote)
+        val btnSave    = findViewById<Button>(R.id.btnSave)
+        val tvError    = findViewById<TextView>(R.id.tvError)
 
-        val categories  = arrayOf("Food", "Transportation", "Bills", "Shopping", "Others")
+        // Categories
+        val categories = arrayOf("Food", "Transportation", "Bills", "Shopping", "Others")
         spinnerCat.adapter = ArrayAdapter(
-            this,
-            android.R.layout.simple_spinner_dropdown_item,
-            categories
+            this, android.R.layout.simple_spinner_dropdown_item, categories
         )
 
         // Pre-fill if editing
@@ -46,8 +46,20 @@ class AddEditExpenseActivity : AppCompatActivity() {
             spinnerCat.setSelection(categories.indexOf(cat).coerceAtLeast(0))
         } else {
             tvTitle.text = "Add Expense"
-            etDate.setText(LocalDate.now().toString())
+            // Default to today's date
+            val cal = Calendar.getInstance()
+            etDate.setText("%04d-%02d-%02d".format(
+                cal.get(Calendar.YEAR),
+                cal.get(Calendar.MONTH) + 1,
+                cal.get(Calendar.DAY_OF_MONTH)
+            ))
         }
+
+        // Make date field open a DatePickerDialog instead of the keyboard
+        etDate.isFocusable         = false
+        etDate.isFocusableInTouchMode = false
+        etDate.isClickable         = true
+        etDate.setOnClickListener  { showDatePicker(etDate) }
 
         btnSave.setOnClickListener {
             val amountStr = etAmount.text.toString().trim()
@@ -55,7 +67,7 @@ class AddEditExpenseActivity : AppCompatActivity() {
             val note      = etNote.text.toString().trim()
             val category  = spinnerCat.selectedItem.toString()
 
-            // Input validation
+            // Validation
             if (amountStr.isEmpty()) {
                 tvError.text = "Amount is required."
                 tvError.visibility = View.VISIBLE
@@ -68,7 +80,7 @@ class AddEditExpenseActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
             if (date.isEmpty()) {
-                tvError.text = "Date is required."
+                tvError.text = "Please pick a date."
                 tvError.visibility = View.VISIBLE
                 return@setOnClickListener
             }
@@ -76,7 +88,9 @@ class AddEditExpenseActivity : AppCompatActivity() {
             tvError.visibility = View.GONE
             btnSave.isEnabled  = false
 
-            val token = SessionManager(this).getToken() ?: run { finish(); return@setOnClickListener }
+            val token = SessionManager(this).getToken()
+                ?: run { finish(); return@setOnClickListener }
+
             val request = ExpenseRequest(amount, category, date, note.ifBlank { null })
 
             lifecycleScope.launch {
@@ -96,13 +110,39 @@ class AddEditExpenseActivity : AppCompatActivity() {
                             Toast.LENGTH_SHORT
                         ).show()
                     }
-                    finish() // Returns to DashboardActivity, which reloads in onResume
+                    finish()
                 } catch (e: Exception) {
-                    tvError.text       = "Failed to save. Check your connection."
-                    tvError.visibility = View.VISIBLE
-                    btnSave.isEnabled  = true
+                    val session = SessionManager(this@AddEditExpenseActivity)
+                    if (!session.handleUnauthorized(e)) {
+                        tvError.text       = "Failed to save. Check your connection."
+                        tvError.visibility = View.VISIBLE
+                        btnSave.isEnabled  = true
+                    }
                 }
             }
         }
+    }
+
+    private fun showDatePicker(etDate: EditText) {
+        // Parse whatever date is already in the field, fall back to today
+        val cal     = Calendar.getInstance()
+        val current = etDate.text.toString()
+        if (current.isNotEmpty()) {
+            try {
+                val parts = current.split("-")
+                cal.set(parts[0].toInt(), parts[1].toInt() - 1, parts[2].toInt())
+            } catch (e: Exception) { /* use today */ }
+        }
+
+        DatePickerDialog(
+            this,
+            { _, year, month, day ->
+                // month is 0-indexed in Calendar, so +1 for display
+                etDate.setText("%04d-%02d-%02d".format(year, month + 1, day))
+            },
+            cal.get(Calendar.YEAR),
+            cal.get(Calendar.MONTH),
+            cal.get(Calendar.DAY_OF_MONTH)
+        ).show()
     }
 }

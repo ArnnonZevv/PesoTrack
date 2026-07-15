@@ -43,15 +43,14 @@ class DashboardActivity : AppCompatActivity() {
         tvWelcome.text = "Hello, ${session.getFullname()}"
 
         adapter = ExpenseAdapter(
-            onEdit = { expense -> openAddEdit(expense) },
+            onEdit   = { expense -> openAddEdit(expense) },
             onDelete = { expense -> confirmDelete(expense) }
         )
 
         rvExpenses.layoutManager = LinearLayoutManager(this)
         rvExpenses.adapter       = adapter
 
-        fabAdd.setOnClickListener { openAddEdit(null) }
-
+        fabAdd.setOnClickListener    { openAddEdit(null) }
         btnLogout.setOnClickListener {
             session.clearSession()
             startActivity(Intent(this, LoginActivity::class.java))
@@ -61,7 +60,6 @@ class DashboardActivity : AppCompatActivity() {
         loadExpenses()
     }
 
-    // Reload whenever returning from AddEditExpenseActivity
     override fun onResume() {
         super.onResume()
         loadExpenses()
@@ -76,11 +74,14 @@ class DashboardActivity : AppCompatActivity() {
                 updateTotal(expenses)
                 tvEmpty.visibility = if (expenses.isEmpty()) View.VISIBLE else View.GONE
             } catch (e: Exception) {
-                Toast.makeText(
-                    this@DashboardActivity,
-                    "Failed to load expenses.",
-                    Toast.LENGTH_SHORT
-                ).show()
+                // If token expired, go back to login — otherwise show toast
+                if (!session.handleUnauthorized(e)) {
+                    Toast.makeText(
+                        this@DashboardActivity,
+                        "Failed to load expenses.",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
             }
         }
     }
@@ -120,7 +121,13 @@ class DashboardActivity : AppCompatActivity() {
                 Toast.makeText(this@DashboardActivity, "Deleted.", Toast.LENGTH_SHORT).show()
                 loadExpenses()
             } catch (e: Exception) {
-                Toast.makeText(this@DashboardActivity, "Failed to delete.", Toast.LENGTH_SHORT).show()
+                if (!session.handleUnauthorized(e)) {
+                    Toast.makeText(
+                        this@DashboardActivity,
+                        "Failed to delete.",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
             }
         }
     }

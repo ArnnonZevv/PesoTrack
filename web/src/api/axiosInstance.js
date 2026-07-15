@@ -4,8 +4,7 @@ const axiosInstance = axios.create({
   baseURL: import.meta.env.VITE_API_URL,
 })
 
-// Attach the JWT token to every request automatically.
-// This is what the JwtAuthFilter on the backend reads.
+// Attach JWT to every outgoing request
 axiosInstance.interceptors.request.use((config) => {
   const token = localStorage.getItem('token')
   if (token) {
@@ -13,5 +12,18 @@ axiosInstance.interceptors.request.use((config) => {
   }
   return config
 })
+
+// If any response comes back 401 (token expired or invalid),
+// clear everything and redirect to login
+axiosInstance.interceptors.response.use(
+  response => response,
+  error => {
+    if (error.response?.status === 401) {
+      localStorage.clear()
+      window.location.href = '/login'
+    }
+    return Promise.reject(error)
+  }
+)
 
 export default axiosInstance
