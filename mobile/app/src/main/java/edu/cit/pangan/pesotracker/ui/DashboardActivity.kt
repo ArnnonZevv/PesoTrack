@@ -19,8 +19,17 @@ class DashboardActivity : AppCompatActivity() {
 
     private lateinit var session: SessionManager
     private lateinit var adapter: ExpenseAdapter
-    private lateinit var tvTotal: TextView
-    private lateinit var tvEmpty: TextView
+
+    // Full list kept in memory — filter never calls the API again
+    private var allExpenses: List<ExpenseResponse> = emptyList()
+
+    private lateinit var tvTotal:     TextView
+    private lateinit var tvEmpty:     TextView
+    private lateinit var tvBreakdown: TextView
+    private lateinit var spinnerFilter: Spinner
+
+    private val categories = arrayOf("All", "Food", "Transportation", "Bills", "Shopping", "Others")
+    private var currentFilter = "All"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,14 +42,28 @@ class DashboardActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_dashboard)
 
-        val tvWelcome  = findViewById<TextView>(R.id.tvWelcome)
-        val rvExpenses = findViewById<RecyclerView>(R.id.rvExpenses)
-        val fabAdd     = findViewById<com.google.android.material.floatingactionbutton.FloatingActionButton>(R.id.fabAdd)
-        val btnLogout  = findViewById<Button>(R.id.btnLogout)
-        tvTotal        = findViewById(R.id.tvTotal)
-        tvEmpty        = findViewById(R.id.tvEmpty)
+        val tvWelcome    = findViewById<TextView>(R.id.tvWelcome)
+        val rvExpenses   = findViewById<RecyclerView>(R.id.rvExpenses)
+        val fabAdd       = findViewById<com.google.android.material.floatingactionbutton.FloatingActionButton>(R.id.fabAdd)
+        val btnLogout    = findViewById<Button>(R.id.btnLogout)
+        tvTotal          = findViewById(R.id.tvTotal)
+        tvEmpty          = findViewById(R.id.tvEmpty)
+        tvBreakdown      = findViewById(R.id.tvBreakdown)
+        spinnerFilter    = findViewById(R.id.spinnerFilter)
 
         tvWelcome.text = "Hello, ${session.getFullname()}"
+
+        // Filter spinner
+        spinnerFilter.adapter = ArrayAdapter(
+            this, android.R.layout.simple_spinner_dropdown_item, categories
+        )
+        spinnerFilter.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View?, pos: Int, id: Long) {
+                currentFilter = categories[pos]
+                applyFilter()
+            }
+            override fun onNothingSelected(parent: AdapterView<*>) {}
+        }
 
         adapter = ExpenseAdapter(
             onEdit   = { expense -> openAddEdit(expense) },
@@ -69,12 +92,10 @@ class DashboardActivity : AppCompatActivity() {
         val token = session.getToken() ?: return
         lifecycleScope.launch {
             try {
-                val expenses = RetrofitClient.getService(token).getExpenses()
-                adapter.submitList(expenses)
-                updateTotal(expenses)
-                tvEmpty.visibility = if (expenses.isEmpty()) View.VISIBLE else View.GONE
+                allExpenses = RetrofitClient.getService(token).getExpenses()
+                applyFilter()
+                updateSummary()
             } catch (e: Exception) {
-                // If token expired, go back to login — otherwise show toast
                 if (!session.handleUnauthorized(e)) {
                     Toast.makeText(
                         this@DashboardActivity,
@@ -86,9 +107,34 @@ class DashboardActivity : AppCompatActivity() {
         }
     }
 
-    private fun updateTotal(expenses: List<ExpenseResponse>) {
-        val total = expenses.sumOf { it.amount }
-        tvTotal.text = "Total: ₱%.2f".format(total)
+    private fun applyFilter() {
+        val filtered = if (currentFilter == "All") allExpenses
+                       else allExpenses.filter { it.category == currentFilter }
+
+        adapter.submitList(filtered)
+        tvEmpty.visibility = if (filtered.isEmpty()) View.VISIBLE else View.GONE
+    }
+
+    private fun updateSummary() {
+        // Grand total
+        val grand = allExpenses.sumOf { it.amount }
+        tvTotal.text = "Total: ₱%.2f".format(grand)
+
+        // Per-category breakdown
+        if (allExpenses.isEmpty()) {
+            tvBreakdown.visibility = View.GONE
+            return
+        }
+
+        val map = mutableMapOf<String, Double>()
+        allExpenses.forEach { map[it.category] = (map[it.category] ?: 0.0) + it.amount }
+
+        val lines = map.entries
+            .sortedByDescending { it.value }
+            .joinToString("   ") { (cat, total) -> "$cat: ₱%.2f".format(total) }
+
+        tvBreakdown.text       = lines
+        tvBreakdown.visibility = View.VISIBLE
     }
 
     private fun openAddEdit(expense: ExpenseResponse?) {
