@@ -4,13 +4,16 @@ package edu.cit.pangan.pesotracker.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
+import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import com.google.android.material.button.MaterialButton;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import edu.cit.pangan.pesotracker.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -18,29 +21,50 @@ import java.lang.String;
 
 public final class ActivityDashboardBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final CoordinatorLayout rootView;
 
   @NonNull
-  public final MaterialButton btnLogout;
+  public final Button btnLogout;
 
   @NonNull
-  public final TextView tvSubtitle;
+  public final FloatingActionButton fabAdd;
+
+  @NonNull
+  public final RecyclerView rvExpenses;
+
+  @NonNull
+  public final Spinner spinnerFilter;
+
+  @NonNull
+  public final TextView tvBreakdown;
+
+  @NonNull
+  public final TextView tvEmpty;
+
+  @NonNull
+  public final TextView tvTotal;
 
   @NonNull
   public final TextView tvWelcome;
 
-  private ActivityDashboardBinding(@NonNull LinearLayout rootView,
-      @NonNull MaterialButton btnLogout, @NonNull TextView tvSubtitle,
-      @NonNull TextView tvWelcome) {
+  private ActivityDashboardBinding(@NonNull CoordinatorLayout rootView, @NonNull Button btnLogout,
+      @NonNull FloatingActionButton fabAdd, @NonNull RecyclerView rvExpenses,
+      @NonNull Spinner spinnerFilter, @NonNull TextView tvBreakdown, @NonNull TextView tvEmpty,
+      @NonNull TextView tvTotal, @NonNull TextView tvWelcome) {
     this.rootView = rootView;
     this.btnLogout = btnLogout;
-    this.tvSubtitle = tvSubtitle;
+    this.fabAdd = fabAdd;
+    this.rvExpenses = rvExpenses;
+    this.spinnerFilter = spinnerFilter;
+    this.tvBreakdown = tvBreakdown;
+    this.tvEmpty = tvEmpty;
+    this.tvTotal = tvTotal;
     this.tvWelcome = tvWelcome;
   }
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public CoordinatorLayout getRoot() {
     return rootView;
   }
 
@@ -66,14 +90,44 @@ public final class ActivityDashboardBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.btnLogout;
-      MaterialButton btnLogout = ViewBindings.findChildViewById(rootView, id);
+      Button btnLogout = ViewBindings.findChildViewById(rootView, id);
       if (btnLogout == null) {
         break missingId;
       }
 
-      id = R.id.tvSubtitle;
-      TextView tvSubtitle = ViewBindings.findChildViewById(rootView, id);
-      if (tvSubtitle == null) {
+      id = R.id.fabAdd;
+      FloatingActionButton fabAdd = ViewBindings.findChildViewById(rootView, id);
+      if (fabAdd == null) {
+        break missingId;
+      }
+
+      id = R.id.rvExpenses;
+      RecyclerView rvExpenses = ViewBindings.findChildViewById(rootView, id);
+      if (rvExpenses == null) {
+        break missingId;
+      }
+
+      id = R.id.spinnerFilter;
+      Spinner spinnerFilter = ViewBindings.findChildViewById(rootView, id);
+      if (spinnerFilter == null) {
+        break missingId;
+      }
+
+      id = R.id.tvBreakdown;
+      TextView tvBreakdown = ViewBindings.findChildViewById(rootView, id);
+      if (tvBreakdown == null) {
+        break missingId;
+      }
+
+      id = R.id.tvEmpty;
+      TextView tvEmpty = ViewBindings.findChildViewById(rootView, id);
+      if (tvEmpty == null) {
+        break missingId;
+      }
+
+      id = R.id.tvTotal;
+      TextView tvTotal = ViewBindings.findChildViewById(rootView, id);
+      if (tvTotal == null) {
         break missingId;
       }
 
@@ -83,8 +137,8 @@ public final class ActivityDashboardBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityDashboardBinding((LinearLayout) rootView, btnLogout, tvSubtitle,
-          tvWelcome);
+      return new ActivityDashboardBinding((CoordinatorLayout) rootView, btnLogout, fabAdd,
+          rvExpenses, spinnerFilter, tvBreakdown, tvEmpty, tvTotal, tvWelcome);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -1,30 +1,50 @@
 [
     {
-        "merged": "edu.cit.pangan.pesotracker.app-debug-36:/layout_activity_register.xml.flat",
-        "source": "edu.cit.pangan.pesotracker.app-main-38:/layout/activity_register.xml"
+        "merged": "edu.cit.pangan.pesotracker.app-debug-36:/drawable_input_bg.xml.flat",
+        "source": "edu.cit.pangan.pesotracker.app-main-38:/drawable/input_bg.xml"
     },
     {
-        "merged": "edu.cit.pangan.pesotracker.app-debug-36:/layout_activity_dashboard.xml.flat",
-        "source": "edu.cit.pangan.pesotracker.app-main-38:/layout/activity_dashboard.xml"
+        "merged": "C:\\Users\\L22X16W15\\.gradle\\daemon\\8.4\\edu.cit.pangan.pesotracker.app-debug-36:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\L22X16W15\\.gradle\\daemon\\8.4\\edu.cit.pangan.pesotracker.app-main-38:\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "edu.cit.pangan.pesotracker.app-debug-36:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "edu.cit.pangan.pesotracker.app-main-38:/drawable/ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\L22X16W15\\.gradle\\daemon\\8.4\\edu.cit.pangan.pesotracker.app-debug-36:\\layout_activity_dashboard.xml.flat",
+        "source": "C:\\Users\\L22X16W15\\.gradle\\daemon\\8.4\\edu.cit.pangan.pesotracker.app-main-38:\\layout\\activity_dashboard.xml"
     },
     {
-        "merged": "edu.cit.pangan.pesotracker.app-debug-36:/layout_activity_login.xml.flat",
-        "source": "edu.cit.pangan.pesotracker.app-main-38:/layout/activity_login.xml"
+        "merged": "C:\\Users\\L22X16W15\\.gradle\\daemon\\8.4\\edu.cit.pangan.pesotracker.app-debug-36:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\L22X16W15\\.gradle\\daemon\\8.4\\edu.cit.pangan.pesotracker.app-main-38:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "edu.cit.pangan.pesotracker.app-debug-36:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "edu.cit.pangan.pesotracker.app-main-38:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "C:\\Users\\L22X16W15\\.gradle\\daemon\\8.4\\edu.cit.pangan.pesotracker.app-debug-36:\\layout_activity_register.xml.flat",
+        "source": "C:\\Users\\L22X16W15\\.gradle\\daemon\\8.4\\edu.cit.pangan.pesotracker.app-main-38:\\layout\\activity_register.xml"
     },
     {
-        "merged": "edu.cit.pangan.pesotracker.app-debug-36:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "edu.cit.pangan.pesotracker.app-main-38:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "C:\\Users\\L22X16W15\\.gradle\\daemon\\8.4\\edu.cit.pangan.pesotracker.app-debug-36:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\L22X16W15\\.gradle\\daemon\\8.4\\edu.cit.pangan.pesotracker.app-main-38:\\drawable\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "edu.cit.pangan.pesotracker.app-debug-36:/drawable_ic_launcher_background.xml.flat",
-        "source": "edu.cit.pangan.pesotracker.app-main-38:/drawable/ic_launcher_background.xml"
+        "merged": "C:\\Users\\L22X16W15\\.gradle\\daemon\\8.4\\edu.cit.pangan.pesotracker.app-debug-36:\\layout_item_expense.xml.flat",
+        "source": "C:\\Users\\L22X16W15\\.gradle\\daemon\\8.4\\edu.cit.pangan.pesotracker.app-main-38:\\layout\\item_expense.xml"
+    },
+    {
+        "merged": "C:\\Users\\L22X16W15\\.gradle\\daemon\\8.4\\edu.cit.pangan.pesotracker.app-debug-36:\\drawable_input_bg.xml.flat",
+        "source": "C:\\Users\\L22X16W15\\.gradle\\daemon\\8.4\\edu.cit.pangan.pesotracker.app-main-38:\\drawable\\input_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\L22X16W15\\.gradle\\daemon\\8.4\\edu.cit.pangan.pesotracker.app-debug-36:\\layout_input_bg.xml.flat",
+        "source": "C:\\Users\\L22X16W15\\.gradle\\daemon\\8.4\\edu.cit.pangan.pesotracker.app-main-38:\\layout\\input_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\L22X16W15\\.gradle\\daemon\\8.4\\edu.cit.pangan.pesotracker.app-debug-36:\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\L22X16W15\\.gradle\\daemon\\8.4\\edu.cit.pangan.pesotracker.app-main-38:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\L22X16W15\\.gradle\\daemon\\8.4\\edu.cit.pangan.pesotracker.app-debug-36:\\layout_activity_add_edit_expense.xml.flat",
+        "source": "C:\\Users\\L22X16W15\\.gradle\\daemon\\8.4\\edu.cit.pangan.pesotracker.app-main-38:\\layout\\activity_add_edit_expense.xml"
+    },
+    {
+        "merged": "C:\\Users\\L22X16W15\\.gradle\\daemon\\8.4\\edu.cit.pangan.pesotracker.app-debug-36:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\L22X16W15\\.gradle\\daemon\\8.4\\edu.cit.pangan.pesotracker.app-main-38:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     }
 ]

@@ -1,5 +1,17 @@
 [
     {
+        "merged": "edu.cit.pangan.pesotracker.app-mergeDebugResources-35:/layout/activity_add_edit_expense.xml",
+        "source": "edu.cit.pangan.pesotracker.app-main-38:/layout/activity_add_edit_expense.xml"
+    },
+    {
+        "merged": "edu.cit.pangan.pesotracker.app-mergeDebugResources-35:/layout/input_bg.xml",
+        "source": "edu.cit.pangan.pesotracker.app-main-38:/layout/input_bg.xml"
+    },
+    {
+        "merged": "edu.cit.pangan.pesotracker.app-mergeDebugResources-35:/layout/item_expense.xml",
+        "source": "edu.cit.pangan.pesotracker.app-main-38:/layout/item_expense.xml"
+    },
+    {
         "merged": "edu.cit.pangan.pesotracker.app-mergeDebugResources-35:/layout/activity_login.xml",
         "source": "edu.cit.pangan.pesotracker.app-main-38:/layout/activity_login.xml"
     },

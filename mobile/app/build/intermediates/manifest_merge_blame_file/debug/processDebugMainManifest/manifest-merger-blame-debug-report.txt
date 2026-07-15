@@ -9,37 +9,37 @@
 9        android:targetSdkVersion="34" />
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->C:\Users\Pangan Family\Documents\Zevv\PesoTrack\mobile\app\src\main\AndroidManifest.xml:4:5-67
-11-->C:\Users\Pangan Family\Documents\Zevv\PesoTrack\mobile\app\src\main\AndroidManifest.xml:4:22-64
+11-->Z:\L22X16W15\Project\mobile\app\src\main\AndroidManifest.xml:4:5-67
+11-->Z:\L22X16W15\Project\mobile\app\src\main\AndroidManifest.xml:4:22-64
 12
 13    <permission
-13-->[androidx.core:core:1.13.1] C:\Users\Pangan Family\.gradle\caches\transforms-3\bc326708cb7196bf07e7166a8af3f5e0\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
+13-->[androidx.core:core:1.13.1] C:\Users\L22X16W15\.gradle\caches\transforms-3\bc326708cb7196bf07e7166a8af3f5e0\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
 14        android:name="edu.cit.pangan.pesotracker.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-14-->[androidx.core:core:1.13.1] C:\Users\Pangan Family\.gradle\caches\transforms-3\bc326708cb7196bf07e7166a8af3f5e0\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
+14-->[androidx.core:core:1.13.1] C:\Users\L22X16W15\.gradle\caches\transforms-3\bc326708cb7196bf07e7166a8af3f5e0\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
 15        android:protectionLevel="signature" />
-15-->[androidx.core:core:1.13.1] C:\Users\Pangan Family\.gradle\caches\transforms-3\bc326708cb7196bf07e7166a8af3f5e0\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
+15-->[androidx.core:core:1.13.1] C:\Users\L22X16W15\.gradle\caches\transforms-3\bc326708cb7196bf07e7166a8af3f5e0\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
 16
 17    <uses-permission android:name="edu.cit.pangan.pesotracker.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-17-->[androidx.core:core:1.13.1] C:\Users\Pangan Family\.gradle\caches\transforms-3\bc326708cb7196bf07e7166a8af3f5e0\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
-17-->[androidx.core:core:1.13.1] C:\Users\Pangan Family\.gradle\caches\transforms-3\bc326708cb7196bf07e7166a8af3f5e0\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
+17-->[androidx.core:core:1.13.1] C:\Users\L22X16W15\.gradle\caches\transforms-3\bc326708cb7196bf07e7166a8af3f5e0\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
+17-->[androidx.core:core:1.13.1] C:\Users\L22X16W15\.gradle\caches\transforms-3\bc326708cb7196bf07e7166a8af3f5e0\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
 18
 19    <application
-19-->C:\Users\Pangan Family\Documents\Zevv\PesoTrack\mobile\app\src\main\AndroidManifest.xml:6:5-31:19
+19-->Z:\L22X16W15\Project\mobile\app\src\main\AndroidManifest.xml:6:5-33:19
 20        android:allowBackup="true"
-20-->C:\Users\Pangan Family\Documents\Zevv\PesoTrack\mobile\app\src\main\AndroidManifest.xml:7:9-35
+20-->Z:\L22X16W15\Project\mobile\app\src\main\AndroidManifest.xml:7:9-35
 21        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-21-->[androidx.core:core:1.13.1] C:\Users\Pangan Family\.gradle\caches\transforms-3\bc326708cb7196bf07e7166a8af3f5e0\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
+21-->[androidx.core:core:1.13.1] C:\Users\L22X16W15\.gradle\caches\transforms-3\bc326708cb7196bf07e7166a8af3f5e0\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
 22        android:debuggable="true"
 23        android:extractNativeLibs="false"
 24        android:icon="@mipmap/ic_launcher"
-24-->C:\Users\Pangan Family\Documents\Zevv\PesoTrack\mobile\app\src\main\AndroidManifest.xml:8:9-43
+24-->Z:\L22X16W15\Project\mobile\app\src\main\AndroidManifest.xml:8:9-43
 25        android:label="PesoTracker"
-25-->C:\Users\Pangan Family\Documents\Zevv\PesoTrack\mobile\app\src\main\AndroidManifest.xml:9:9-36
+25-->Z:\L22X16W15\Project\mobile\app\src\main\AndroidManifest.xml:9:9-36
 26        android:testOnly="true"
 27        android:theme="@style/Theme.PesoTracker"
-27-->C:\Users\Pangan Family\Documents\Zevv\PesoTrack\mobile\app\src\main\AndroidManifest.xml:10:9-49
+27-->Z:\L22X16W15\Project\mobile\app\src\main\AndroidManifest.xml:10:9-49
 28        android:usesCleartextTraffic="true" >
-28-->C:\Users\Pangan Family\Documents\Zevv\PesoTrack\mobile\app\src\main\AndroidManifest.xml:11:9-44
+28-->Z:\L22X16W15\Project\mobile\app\src\main\AndroidManifest.xml:11:9-44
 29
 30        <!--
 31          usesCleartextTraffic=true is needed only because the Spring Boot
@@ -49,100 +49,112 @@
 35        -->
 36
 37        <activity
-37-->C:\Users\Pangan Family\Documents\Zevv\PesoTrack\mobile\app\src\main\AndroidManifest.xml:19:9-26:20
-38            android:name="edu.cit.pangan.pesotracker.ui.LoginActivity"
-38-->C:\Users\Pangan Family\Documents\Zevv\PesoTrack\mobile\app\src\main\AndroidManifest.xml:20:13-45
+37-->Z:\L22X16W15\Project\mobile\app\src\main\AndroidManifest.xml:19:9-26:16
+38            android:name="edu.cit.pangan.pesotracker.ui.MainActivity"
+38-->Z:\L22X16W15\Project\mobile\app\src\main\AndroidManifest.xml:20:9-40
 39            android:exported="true" >
-39-->C:\Users\Pangan Family\Documents\Zevv\PesoTrack\mobile\app\src\main\AndroidManifest.xml:21:13-36
+39-->Z:\L22X16W15\Project\mobile\app\src\main\AndroidManifest.xml:21:9-32
 40            <intent-filter>
-40-->C:\Users\Pangan Family\Documents\Zevv\PesoTrack\mobile\app\src\main\AndroidManifest.xml:22:13-25:29
+40-->Z:\L22X16W15\Project\mobile\app\src\main\AndroidManifest.xml:22:9-25:25
 41                <action android:name="android.intent.action.MAIN" />
-41-->C:\Users\Pangan Family\Documents\Zevv\PesoTrack\mobile\app\src\main\AndroidManifest.xml:23:17-69
-41-->C:\Users\Pangan Family\Documents\Zevv\PesoTrack\mobile\app\src\main\AndroidManifest.xml:23:25-66
+41-->Z:\L22X16W15\Project\mobile\app\src\main\AndroidManifest.xml:23:13-64
+41-->Z:\L22X16W15\Project\mobile\app\src\main\AndroidManifest.xml:23:21-62
 42
 43                <category android:name="android.intent.category.LAUNCHER" />
-43-->C:\Users\Pangan Family\Documents\Zevv\PesoTrack\mobile\app\src\main\AndroidManifest.xml:24:17-77
-43-->C:\Users\Pangan Family\Documents\Zevv\PesoTrack\mobile\app\src\main\AndroidManifest.xml:24:27-74
+43-->Z:\L22X16W15\Project\mobile\app\src\main\AndroidManifest.xml:24:13-72
+43-->Z:\L22X16W15\Project\mobile\app\src\main\AndroidManifest.xml:24:23-70
 44            </intent-filter>
 45        </activity>
 46        <activity
-46-->C:\Users\Pangan Family\Documents\Zevv\PesoTrack\mobile\app\src\main\AndroidManifest.xml:28:9-82
-47            android:name="edu.cit.pangan.pesotracker.ui.RegisterActivity"
-47-->C:\Users\Pangan Family\Documents\Zevv\PesoTrack\mobile\app\src\main\AndroidManifest.xml:28:19-54
+46-->Z:\L22X16W15\Project\mobile\app\src\main\AndroidManifest.xml:28:5-84
+47            android:name="edu.cit.pangan.pesotracker.ui.LoginActivity"
+47-->Z:\L22X16W15\Project\mobile\app\src\main\AndroidManifest.xml:28:15-47
 48            android:exported="false" />
-48-->C:\Users\Pangan Family\Documents\Zevv\PesoTrack\mobile\app\src\main\AndroidManifest.xml:28:55-79
+48-->Z:\L22X16W15\Project\mobile\app\src\main\AndroidManifest.xml:28:58-82
 49        <activity
-49-->C:\Users\Pangan Family\Documents\Zevv\PesoTrack\mobile\app\src\main\AndroidManifest.xml:29:9-83
-50            android:name="edu.cit.pangan.pesotracker.ui.DashboardActivity"
-50-->C:\Users\Pangan Family\Documents\Zevv\PesoTrack\mobile\app\src\main\AndroidManifest.xml:29:19-55
+49-->Z:\L22X16W15\Project\mobile\app\src\main\AndroidManifest.xml:29:5-85
+50            android:name="edu.cit.pangan.pesotracker.ui.RegisterActivity"
+50-->Z:\L22X16W15\Project\mobile\app\src\main\AndroidManifest.xml:29:15-50
 51            android:exported="false" />
-51-->C:\Users\Pangan Family\Documents\Zevv\PesoTrack\mobile\app\src\main\AndroidManifest.xml:29:56-80
-52
-53        <provider
-53-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Pangan Family\.gradle\caches\transforms-3\759dcfc60f057c4994f247162298151a\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
-54            android:name="androidx.startup.InitializationProvider"
-54-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Pangan Family\.gradle\caches\transforms-3\759dcfc60f057c4994f247162298151a\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
-55            android:authorities="edu.cit.pangan.pesotracker.androidx-startup"
-55-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Pangan Family\.gradle\caches\transforms-3\759dcfc60f057c4994f247162298151a\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
-56            android:exported="false" >
-56-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Pangan Family\.gradle\caches\transforms-3\759dcfc60f057c4994f247162298151a\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
-57            <meta-data
-57-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Pangan Family\.gradle\caches\transforms-3\759dcfc60f057c4994f247162298151a\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
-58                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-58-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Pangan Family\.gradle\caches\transforms-3\759dcfc60f057c4994f247162298151a\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
-59                android:value="androidx.startup" />
-59-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Pangan Family\.gradle\caches\transforms-3\759dcfc60f057c4994f247162298151a\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
-60            <meta-data
-60-->[androidx.lifecycle:lifecycle-process:2.8.4] C:\Users\Pangan Family\.gradle\caches\transforms-3\cfe781613b9c115cd7250b7f3ff90621\transformed\lifecycle-process-2.8.4\AndroidManifest.xml:29:13-31:52
-61                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-61-->[androidx.lifecycle:lifecycle-process:2.8.4] C:\Users\Pangan Family\.gradle\caches\transforms-3\cfe781613b9c115cd7250b7f3ff90621\transformed\lifecycle-process-2.8.4\AndroidManifest.xml:30:17-78
-62                android:value="androidx.startup" />
-62-->[androidx.lifecycle:lifecycle-process:2.8.4] C:\Users\Pangan Family\.gradle\caches\transforms-3\cfe781613b9c115cd7250b7f3ff90621\transformed\lifecycle-process-2.8.4\AndroidManifest.xml:31:17-49
+51-->Z:\L22X16W15\Project\mobile\app\src\main\AndroidManifest.xml:29:59-83
+52        <activity
+52-->Z:\L22X16W15\Project\mobile\app\src\main\AndroidManifest.xml:30:5-85
+53            android:name="edu.cit.pangan.pesotracker.ui.DashboardActivity"
+53-->Z:\L22X16W15\Project\mobile\app\src\main\AndroidManifest.xml:30:15-51
+54            android:exported="false" />
+54-->Z:\L22X16W15\Project\mobile\app\src\main\AndroidManifest.xml:30:59-83
+55        <activity
+55-->Z:\L22X16W15\Project\mobile\app\src\main\AndroidManifest.xml:31:5-85
+56            android:name="edu.cit.pangan.pesotracker.ui.AddEditExpenseActivity"
+56-->Z:\L22X16W15\Project\mobile\app\src\main\AndroidManifest.xml:31:15-56
+57            android:exported="false" />
+57-->Z:\L22X16W15\Project\mobile\app\src\main\AndroidManifest.xml:31:59-83
+58
+59        <provider
+59-->[androidx.emoji2:emoji2:1.3.0] C:\Users\L22X16W15\.gradle\caches\transforms-3\759dcfc60f057c4994f247162298151a\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+60            android:name="androidx.startup.InitializationProvider"
+60-->[androidx.emoji2:emoji2:1.3.0] C:\Users\L22X16W15\.gradle\caches\transforms-3\759dcfc60f057c4994f247162298151a\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
+61            android:authorities="edu.cit.pangan.pesotracker.androidx-startup"
+61-->[androidx.emoji2:emoji2:1.3.0] C:\Users\L22X16W15\.gradle\caches\transforms-3\759dcfc60f057c4994f247162298151a\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
+62            android:exported="false" >
+62-->[androidx.emoji2:emoji2:1.3.0] C:\Users\L22X16W15\.gradle\caches\transforms-3\759dcfc60f057c4994f247162298151a\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
 63            <meta-data
-63-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Pangan Family\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
-64                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-64-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Pangan Family\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+63-->[androidx.emoji2:emoji2:1.3.0] C:\Users\L22X16W15\.gradle\caches\transforms-3\759dcfc60f057c4994f247162298151a\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+64                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+64-->[androidx.emoji2:emoji2:1.3.0] C:\Users\L22X16W15\.gradle\caches\transforms-3\759dcfc60f057c4994f247162298151a\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
 65                android:value="androidx.startup" />
-65-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Pangan Family\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
-66        </provider>
-67
-68        <receiver
-68-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Pangan Family\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
-69            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-69-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Pangan Family\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
-70            android:directBootAware="false"
-70-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Pangan Family\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
-71            android:enabled="true"
-71-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Pangan Family\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
-72            android:exported="true"
-72-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Pangan Family\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
-73            android:permission="android.permission.DUMP" >
-73-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Pangan Family\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
-74            <intent-filter>
-74-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Pangan Family\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
-75                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-75-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Pangan Family\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
-75-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Pangan Family\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
-76            </intent-filter>
-77            <intent-filter>
-77-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Pangan Family\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
-78                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-78-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Pangan Family\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
-78-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Pangan Family\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
-79            </intent-filter>
+65-->[androidx.emoji2:emoji2:1.3.0] C:\Users\L22X16W15\.gradle\caches\transforms-3\759dcfc60f057c4994f247162298151a\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+66            <meta-data
+66-->[androidx.lifecycle:lifecycle-process:2.8.4] C:\Users\L22X16W15\.gradle\caches\transforms-3\cfe781613b9c115cd7250b7f3ff90621\transformed\lifecycle-process-2.8.4\AndroidManifest.xml:29:13-31:52
+67                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+67-->[androidx.lifecycle:lifecycle-process:2.8.4] C:\Users\L22X16W15\.gradle\caches\transforms-3\cfe781613b9c115cd7250b7f3ff90621\transformed\lifecycle-process-2.8.4\AndroidManifest.xml:30:17-78
+68                android:value="androidx.startup" />
+68-->[androidx.lifecycle:lifecycle-process:2.8.4] C:\Users\L22X16W15\.gradle\caches\transforms-3\cfe781613b9c115cd7250b7f3ff90621\transformed\lifecycle-process-2.8.4\AndroidManifest.xml:31:17-49
+69            <meta-data
+69-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\L22X16W15\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+70                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+70-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\L22X16W15\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+71                android:value="androidx.startup" />
+71-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\L22X16W15\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+72        </provider>
+73
+74        <receiver
+74-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\L22X16W15\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+75            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+75-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\L22X16W15\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+76            android:directBootAware="false"
+76-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\L22X16W15\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+77            android:enabled="true"
+77-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\L22X16W15\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+78            android:exported="true"
+78-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\L22X16W15\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+79            android:permission="android.permission.DUMP" >
+79-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\L22X16W15\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
 80            <intent-filter>
-80-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Pangan Family\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
-81                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-81-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Pangan Family\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
-81-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Pangan Family\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+80-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\L22X16W15\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+81                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+81-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\L22X16W15\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+81-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\L22X16W15\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
 82            </intent-filter>
 83            <intent-filter>
-83-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Pangan Family\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
-84                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-84-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Pangan Family\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
-84-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Pangan Family\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+83-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\L22X16W15\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+84                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+84-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\L22X16W15\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+84-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\L22X16W15\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
 85            </intent-filter>
-86        </receiver>
-87    </application>
-88
-89</manifest>
+86            <intent-filter>
+86-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\L22X16W15\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+87                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+87-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\L22X16W15\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+87-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\L22X16W15\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+88            </intent-filter>
+89            <intent-filter>
+89-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\L22X16W15\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+90                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+90-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\L22X16W15\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+90-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\L22X16W15\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+91            </intent-filter>
+92        </receiver>
+93    </application>
+94
+95</manifest>

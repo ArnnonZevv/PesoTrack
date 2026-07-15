@@ -35,7 +35,7 @@
         -->
 
         <activity
-            android:name="edu.cit.pangan.pesotracker.ui.LoginActivity"
+            android:name="edu.cit.pangan.pesotracker.ui.MainActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -44,10 +44,16 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="edu.cit.pangan.pesotracker.ui.LoginActivity"
+            android:exported="false" />
+        <activity
             android:name="edu.cit.pangan.pesotracker.ui.RegisterActivity"
             android:exported="false" />
         <activity
             android:name="edu.cit.pangan.pesotracker.ui.DashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name="edu.cit.pangan.pesotracker.ui.AddEditExpenseActivity"
             android:exported="false" />
 
         <provider

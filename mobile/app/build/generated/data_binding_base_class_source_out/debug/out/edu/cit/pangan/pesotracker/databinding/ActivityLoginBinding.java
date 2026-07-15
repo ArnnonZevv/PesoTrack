@@ -4,15 +4,14 @@ package edu.cit.pangan.pesotracker.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ProgressBar;
-import android.widget.ScrollView;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import com.google.android.material.button.MaterialButton;
-import com.google.android.material.textfield.TextInputEditText;
 import edu.cit.pangan.pesotracker.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -20,41 +19,37 @@ import java.lang.String;
 
 public final class ActivityLoginBinding implements ViewBinding {
   @NonNull
-  private final ScrollView rootView;
+  private final LinearLayout rootView;
 
   @NonNull
-  public final MaterialButton btnLogin;
+  public final Button btnLogin;
 
   @NonNull
-  public final TextInputEditText etPassword;
+  public final EditText etPassword;
 
   @NonNull
-  public final TextInputEditText etUsername;
-
-  @NonNull
-  public final ProgressBar progressBar;
+  public final EditText etUsername;
 
   @NonNull
   public final TextView tvError;
 
   @NonNull
-  public final TextView tvGoRegister;
+  public final TextView tvGoToRegister;
 
-  private ActivityLoginBinding(@NonNull ScrollView rootView, @NonNull MaterialButton btnLogin,
-      @NonNull TextInputEditText etPassword, @NonNull TextInputEditText etUsername,
-      @NonNull ProgressBar progressBar, @NonNull TextView tvError, @NonNull TextView tvGoRegister) {
+  private ActivityLoginBinding(@NonNull LinearLayout rootView, @NonNull Button btnLogin,
+      @NonNull EditText etPassword, @NonNull EditText etUsername, @NonNull TextView tvError,
+      @NonNull TextView tvGoToRegister) {
     this.rootView = rootView;
     this.btnLogin = btnLogin;
     this.etPassword = etPassword;
     this.etUsername = etUsername;
-    this.progressBar = progressBar;
     this.tvError = tvError;
-    this.tvGoRegister = tvGoRegister;
+    this.tvGoToRegister = tvGoToRegister;
   }
 
   @Override
   @NonNull
-  public ScrollView getRoot() {
+  public LinearLayout getRoot() {
     return rootView;
   }
 
@@ -80,26 +75,20 @@ public final class ActivityLoginBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.btnLogin;
-      MaterialButton btnLogin = ViewBindings.findChildViewById(rootView, id);
+      Button btnLogin = ViewBindings.findChildViewById(rootView, id);
       if (btnLogin == null) {
         break missingId;
       }
 
       id = R.id.etPassword;
-      TextInputEditText etPassword = ViewBindings.findChildViewById(rootView, id);
+      EditText etPassword = ViewBindings.findChildViewById(rootView, id);
       if (etPassword == null) {
         break missingId;
       }
 
       id = R.id.etUsername;
-      TextInputEditText etUsername = ViewBindings.findChildViewById(rootView, id);
+      EditText etUsername = ViewBindings.findChildViewById(rootView, id);
       if (etUsername == null) {
-        break missingId;
-      }
-
-      id = R.id.progressBar;
-      ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
-      if (progressBar == null) {
         break missingId;
       }
 
@@ -109,14 +98,14 @@ public final class ActivityLoginBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.tvGoRegister;
-      TextView tvGoRegister = ViewBindings.findChildViewById(rootView, id);
-      if (tvGoRegister == null) {
+      id = R.id.tvGoToRegister;
+      TextView tvGoToRegister = ViewBindings.findChildViewById(rootView, id);
+      if (tvGoToRegister == null) {
         break missingId;
       }
 
-      return new ActivityLoginBinding((ScrollView) rootView, btnLogin, etPassword, etUsername,
-          progressBar, tvError, tvGoRegister);
+      return new ActivityLoginBinding((LinearLayout) rootView, btnLogin, etPassword, etUsername,
+          tvError, tvGoToRegister);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

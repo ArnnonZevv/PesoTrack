@@ -1,39 +1,39 @@
-edu.cit.pangan.pesotracker.app-lifecycle-viewmodel-ktx-2.8.4-0 C:\Users\Pangan Family\.gradle\caches\transforms-3\10e86365850db2870b17aab6a67fc916\transformed\lifecycle-viewmodel-ktx-2.8.4\res
-edu.cit.pangan.pesotracker.app-emoji2-views-helper-1.3.0-1 C:\Users\Pangan Family\.gradle\caches\transforms-3\14b788e0270dfc857184f843bbd65b72\transformed\emoji2-views-helper-1.3.0\res
-edu.cit.pangan.pesotracker.app-activity-ktx-1.9.1-2 C:\Users\Pangan Family\.gradle\caches\transforms-3\25a7608f77886ede598be6ab292498d3\transformed\activity-ktx-1.9.1\res
-edu.cit.pangan.pesotracker.app-transition-1.5.0-3 C:\Users\Pangan Family\.gradle\caches\transforms-3\28279e822a7ed2b051d539e5a6811940\transformed\transition-1.5.0\res
-edu.cit.pangan.pesotracker.app-appcompat-resources-1.7.0-4 C:\Users\Pangan Family\.gradle\caches\transforms-3\2c2fa370adef66292424fce8ed5f582d\transformed\appcompat-resources-1.7.0\res
-edu.cit.pangan.pesotracker.app-core-runtime-2.2.0-5 C:\Users\Pangan Family\.gradle\caches\transforms-3\2cd9c3bb7bed3aea8b829127202ca3cc\transformed\core-runtime-2.2.0\res
-edu.cit.pangan.pesotracker.app-lifecycle-viewmodel-release-6 C:\Users\Pangan Family\.gradle\caches\transforms-3\2fb27d49d2727b6e6a7c2f0df54682a6\transformed\lifecycle-viewmodel-release\res
-edu.cit.pangan.pesotracker.app-coordinatorlayout-1.1.0-7 C:\Users\Pangan Family\.gradle\caches\transforms-3\3a4b68b59678c0e566fa596c008648e7\transformed\coordinatorlayout-1.1.0\res
-edu.cit.pangan.pesotracker.app-drawerlayout-1.1.1-8 C:\Users\Pangan Family\.gradle\caches\transforms-3\4002f712b3f96fa205cabad683eb9ae7\transformed\drawerlayout-1.1.1\res
-edu.cit.pangan.pesotracker.app-lifecycle-runtime-ktx-release-9 C:\Users\Pangan Family\.gradle\caches\transforms-3\52e5feb6c4c4cadba5eb6d28410f2593\transformed\lifecycle-runtime-ktx-release\res
-edu.cit.pangan.pesotracker.app-startup-runtime-1.1.1-10 C:\Users\Pangan Family\.gradle\caches\transforms-3\5f1fb13c89921a75d4ab4942e47837cc\transformed\startup-runtime-1.1.1\res
-edu.cit.pangan.pesotracker.app-emoji2-1.3.0-11 C:\Users\Pangan Family\.gradle\caches\transforms-3\759dcfc60f057c4994f247162298151a\transformed\emoji2-1.3.0\res
-edu.cit.pangan.pesotracker.app-lifecycle-livedata-core-2.8.4-12 C:\Users\Pangan Family\.gradle\caches\transforms-3\8561e6e3c66203b8a77a5176d87df480\transformed\lifecycle-livedata-core-2.8.4\res
-edu.cit.pangan.pesotracker.app-savedstate-1.2.1-13 C:\Users\Pangan Family\.gradle\caches\transforms-3\8903245fc0cff52487b81679d643f6c6\transformed\savedstate-1.2.1\res
-edu.cit.pangan.pesotracker.app-material-1.12.0-14 C:\Users\Pangan Family\.gradle\caches\transforms-3\94dd55840e25dc95500f415afe98f80f\transformed\material-1.12.0\res
-edu.cit.pangan.pesotracker.app-viewpager2-1.0.0-15 C:\Users\Pangan Family\.gradle\caches\transforms-3\9533a6b9d9536a7273177b5a111a93fa\transformed\viewpager2-1.0.0\res
-edu.cit.pangan.pesotracker.app-annotation-experimental-1.4.0-16 C:\Users\Pangan Family\.gradle\caches\transforms-3\a4261bac46378ba6a108479cc22a8a25\transformed\annotation-experimental-1.4.0\res
-edu.cit.pangan.pesotracker.app-lifecycle-runtime-release-17 C:\Users\Pangan Family\.gradle\caches\transforms-3\a49818786eeddcd474fef8bbea0a62e6\transformed\lifecycle-runtime-release\res
-edu.cit.pangan.pesotracker.app-activity-1.9.1-18 C:\Users\Pangan Family\.gradle\caches\transforms-3\aae184274717c07518d2bd3eaf842bf5\transformed\activity-1.9.1\res
-edu.cit.pangan.pesotracker.app-appcompat-1.7.0-19 C:\Users\Pangan Family\.gradle\caches\transforms-3\ad1ef5e7afe0a1a7be86d4f94fe26634\transformed\appcompat-1.7.0\res
-edu.cit.pangan.pesotracker.app-recyclerview-1.1.0-20 C:\Users\Pangan Family\.gradle\caches\transforms-3\ad2cb9d313281f821f1f728396567718\transformed\recyclerview-1.1.0\res
-edu.cit.pangan.pesotracker.app-fragment-1.5.4-21 C:\Users\Pangan Family\.gradle\caches\transforms-3\b556f402912dc7ffad38cef8604da1ce\transformed\fragment-1.5.4\res
-edu.cit.pangan.pesotracker.app-core-1.13.1-22 C:\Users\Pangan Family\.gradle\caches\transforms-3\bc326708cb7196bf07e7166a8af3f5e0\transformed\core-1.13.1\res
-edu.cit.pangan.pesotracker.app-cardview-1.0.0-23 C:\Users\Pangan Family\.gradle\caches\transforms-3\c0e5b71d7c8c556cc7101a6f38a4130e\transformed\cardview-1.0.0\res
-edu.cit.pangan.pesotracker.app-core-ktx-1.13.1-24 C:\Users\Pangan Family\.gradle\caches\transforms-3\c81b250397c4f45b31a57882ac5d35dc\transformed\core-ktx-1.13.1\res
-edu.cit.pangan.pesotracker.app-lifecycle-livedata-2.8.4-25 C:\Users\Pangan Family\.gradle\caches\transforms-3\ca197fddc500a1811424463c49a6c83d\transformed\lifecycle-livedata-2.8.4\res
-edu.cit.pangan.pesotracker.app-lifecycle-process-2.8.4-26 C:\Users\Pangan Family\.gradle\caches\transforms-3\cfe781613b9c115cd7250b7f3ff90621\transformed\lifecycle-process-2.8.4\res
-edu.cit.pangan.pesotracker.app-lifecycle-viewmodel-savedstate-2.8.4-27 C:\Users\Pangan Family\.gradle\caches\transforms-3\d061f6d726e80353b0fe651695045e55\transformed\lifecycle-viewmodel-savedstate-2.8.4\res
-edu.cit.pangan.pesotracker.app-savedstate-ktx-1.2.1-28 C:\Users\Pangan Family\.gradle\caches\transforms-3\d2b2ddcdea2ea9a86f43285830eea5a8\transformed\savedstate-ktx-1.2.1\res
-edu.cit.pangan.pesotracker.app-lifecycle-livedata-core-ktx-2.8.4-29 C:\Users\Pangan Family\.gradle\caches\transforms-3\d8dbbcd92414a5005fbb1447df71e6b5\transformed\lifecycle-livedata-core-ktx-2.8.4\res
-edu.cit.pangan.pesotracker.app-constraintlayout-2.1.4-30 C:\Users\Pangan Family\.gradle\caches\transforms-3\e5554ed11947a061c449c1a7b1074a75\transformed\constraintlayout-2.1.4\res
-edu.cit.pangan.pesotracker.app-profileinstaller-1.3.1-31 C:\Users\Pangan Family\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\res
-edu.cit.pangan.pesotracker.app-pngs-32 C:\Users\Pangan Family\Documents\Zevv\PesoTrack\mobile\app\build\generated\res\pngs\debug
-edu.cit.pangan.pesotracker.app-resValues-33 C:\Users\Pangan Family\Documents\Zevv\PesoTrack\mobile\app\build\generated\res\resValues\debug
-edu.cit.pangan.pesotracker.app-packageDebugResources-34 C:\Users\Pangan Family\Documents\Zevv\PesoTrack\mobile\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
-edu.cit.pangan.pesotracker.app-packageDebugResources-35 C:\Users\Pangan Family\Documents\Zevv\PesoTrack\mobile\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
-edu.cit.pangan.pesotracker.app-debug-36 C:\Users\Pangan Family\Documents\Zevv\PesoTrack\mobile\app\build\intermediates\merged_res\debug\mergeDebugResources
-edu.cit.pangan.pesotracker.app-debug-37 C:\Users\Pangan Family\Documents\Zevv\PesoTrack\mobile\app\src\debug\res
-edu.cit.pangan.pesotracker.app-main-38 C:\Users\Pangan Family\Documents\Zevv\PesoTrack\mobile\app\src\main\res
+edu.cit.pangan.pesotracker.app-lifecycle-viewmodel-ktx-2.8.4-0 C:\Users\L22X16W15\.gradle\caches\transforms-3\10e86365850db2870b17aab6a67fc916\transformed\lifecycle-viewmodel-ktx-2.8.4\res
+edu.cit.pangan.pesotracker.app-emoji2-views-helper-1.3.0-1 C:\Users\L22X16W15\.gradle\caches\transforms-3\14b788e0270dfc857184f843bbd65b72\transformed\emoji2-views-helper-1.3.0\res
+edu.cit.pangan.pesotracker.app-activity-ktx-1.9.1-2 C:\Users\L22X16W15\.gradle\caches\transforms-3\25a7608f77886ede598be6ab292498d3\transformed\activity-ktx-1.9.1\res
+edu.cit.pangan.pesotracker.app-transition-1.5.0-3 C:\Users\L22X16W15\.gradle\caches\transforms-3\28279e822a7ed2b051d539e5a6811940\transformed\transition-1.5.0\res
+edu.cit.pangan.pesotracker.app-appcompat-resources-1.7.0-4 C:\Users\L22X16W15\.gradle\caches\transforms-3\2c2fa370adef66292424fce8ed5f582d\transformed\appcompat-resources-1.7.0\res
+edu.cit.pangan.pesotracker.app-core-runtime-2.2.0-5 C:\Users\L22X16W15\.gradle\caches\transforms-3\2cd9c3bb7bed3aea8b829127202ca3cc\transformed\core-runtime-2.2.0\res
+edu.cit.pangan.pesotracker.app-lifecycle-viewmodel-release-6 C:\Users\L22X16W15\.gradle\caches\transforms-3\2fb27d49d2727b6e6a7c2f0df54682a6\transformed\lifecycle-viewmodel-release\res
+edu.cit.pangan.pesotracker.app-coordinatorlayout-1.1.0-7 C:\Users\L22X16W15\.gradle\caches\transforms-3\3a4b68b59678c0e566fa596c008648e7\transformed\coordinatorlayout-1.1.0\res
+edu.cit.pangan.pesotracker.app-drawerlayout-1.1.1-8 C:\Users\L22X16W15\.gradle\caches\transforms-3\4002f712b3f96fa205cabad683eb9ae7\transformed\drawerlayout-1.1.1\res
+edu.cit.pangan.pesotracker.app-lifecycle-runtime-ktx-release-9 C:\Users\L22X16W15\.gradle\caches\transforms-3\52e5feb6c4c4cadba5eb6d28410f2593\transformed\lifecycle-runtime-ktx-release\res
+edu.cit.pangan.pesotracker.app-startup-runtime-1.1.1-10 C:\Users\L22X16W15\.gradle\caches\transforms-3\5f1fb13c89921a75d4ab4942e47837cc\transformed\startup-runtime-1.1.1\res
+edu.cit.pangan.pesotracker.app-emoji2-1.3.0-11 C:\Users\L22X16W15\.gradle\caches\transforms-3\759dcfc60f057c4994f247162298151a\transformed\emoji2-1.3.0\res
+edu.cit.pangan.pesotracker.app-lifecycle-livedata-core-2.8.4-12 C:\Users\L22X16W15\.gradle\caches\transforms-3\8561e6e3c66203b8a77a5176d87df480\transformed\lifecycle-livedata-core-2.8.4\res
+edu.cit.pangan.pesotracker.app-savedstate-1.2.1-13 C:\Users\L22X16W15\.gradle\caches\transforms-3\8903245fc0cff52487b81679d643f6c6\transformed\savedstate-1.2.1\res
+edu.cit.pangan.pesotracker.app-material-1.12.0-14 C:\Users\L22X16W15\.gradle\caches\transforms-3\94dd55840e25dc95500f415afe98f80f\transformed\material-1.12.0\res
+edu.cit.pangan.pesotracker.app-viewpager2-1.0.0-15 C:\Users\L22X16W15\.gradle\caches\transforms-3\9533a6b9d9536a7273177b5a111a93fa\transformed\viewpager2-1.0.0\res
+edu.cit.pangan.pesotracker.app-annotation-experimental-1.4.0-16 C:\Users\L22X16W15\.gradle\caches\transforms-3\a4261bac46378ba6a108479cc22a8a25\transformed\annotation-experimental-1.4.0\res
+edu.cit.pangan.pesotracker.app-lifecycle-runtime-release-17 C:\Users\L22X16W15\.gradle\caches\transforms-3\a49818786eeddcd474fef8bbea0a62e6\transformed\lifecycle-runtime-release\res
+edu.cit.pangan.pesotracker.app-activity-1.9.1-18 C:\Users\L22X16W15\.gradle\caches\transforms-3\aae184274717c07518d2bd3eaf842bf5\transformed\activity-1.9.1\res
+edu.cit.pangan.pesotracker.app-appcompat-1.7.0-19 C:\Users\L22X16W15\.gradle\caches\transforms-3\ad1ef5e7afe0a1a7be86d4f94fe26634\transformed\appcompat-1.7.0\res
+edu.cit.pangan.pesotracker.app-recyclerview-1.1.0-20 C:\Users\L22X16W15\.gradle\caches\transforms-3\ad2cb9d313281f821f1f728396567718\transformed\recyclerview-1.1.0\res
+edu.cit.pangan.pesotracker.app-fragment-1.5.4-21 C:\Users\L22X16W15\.gradle\caches\transforms-3\b556f402912dc7ffad38cef8604da1ce\transformed\fragment-1.5.4\res
+edu.cit.pangan.pesotracker.app-core-1.13.1-22 C:\Users\L22X16W15\.gradle\caches\transforms-3\bc326708cb7196bf07e7166a8af3f5e0\transformed\core-1.13.1\res
+edu.cit.pangan.pesotracker.app-cardview-1.0.0-23 C:\Users\L22X16W15\.gradle\caches\transforms-3\c0e5b71d7c8c556cc7101a6f38a4130e\transformed\cardview-1.0.0\res
+edu.cit.pangan.pesotracker.app-core-ktx-1.13.1-24 C:\Users\L22X16W15\.gradle\caches\transforms-3\c81b250397c4f45b31a57882ac5d35dc\transformed\core-ktx-1.13.1\res
+edu.cit.pangan.pesotracker.app-lifecycle-livedata-2.8.4-25 C:\Users\L22X16W15\.gradle\caches\transforms-3\ca197fddc500a1811424463c49a6c83d\transformed\lifecycle-livedata-2.8.4\res
+edu.cit.pangan.pesotracker.app-lifecycle-process-2.8.4-26 C:\Users\L22X16W15\.gradle\caches\transforms-3\cfe781613b9c115cd7250b7f3ff90621\transformed\lifecycle-process-2.8.4\res
+edu.cit.pangan.pesotracker.app-lifecycle-viewmodel-savedstate-2.8.4-27 C:\Users\L22X16W15\.gradle\caches\transforms-3\d061f6d726e80353b0fe651695045e55\transformed\lifecycle-viewmodel-savedstate-2.8.4\res
+edu.cit.pangan.pesotracker.app-savedstate-ktx-1.2.1-28 C:\Users\L22X16W15\.gradle\caches\transforms-3\d2b2ddcdea2ea9a86f43285830eea5a8\transformed\savedstate-ktx-1.2.1\res
+edu.cit.pangan.pesotracker.app-lifecycle-livedata-core-ktx-2.8.4-29 C:\Users\L22X16W15\.gradle\caches\transforms-3\d8dbbcd92414a5005fbb1447df71e6b5\transformed\lifecycle-livedata-core-ktx-2.8.4\res
+edu.cit.pangan.pesotracker.app-constraintlayout-2.1.4-30 C:\Users\L22X16W15\.gradle\caches\transforms-3\e5554ed11947a061c449c1a7b1074a75\transformed\constraintlayout-2.1.4\res
+edu.cit.pangan.pesotracker.app-profileinstaller-1.3.1-31 C:\Users\L22X16W15\.gradle\caches\transforms-3\ea073c5c8a3a7f66e7c417eab8515c08\transformed\profileinstaller-1.3.1\res
+edu.cit.pangan.pesotracker.app-pngs-32 Z:\L22X16W15\Project\mobile\app\build\generated\res\pngs\debug
+edu.cit.pangan.pesotracker.app-resValues-33 Z:\L22X16W15\Project\mobile\app\build\generated\res\resValues\debug
+edu.cit.pangan.pesotracker.app-packageDebugResources-34 Z:\L22X16W15\Project\mobile\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+edu.cit.pangan.pesotracker.app-packageDebugResources-35 Z:\L22X16W15\Project\mobile\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+edu.cit.pangan.pesotracker.app-debug-36 Z:\L22X16W15\Project\mobile\app\build\intermediates\merged_res\debug\mergeDebugResources
+edu.cit.pangan.pesotracker.app-debug-37 Z:\L22X16W15\Project\mobile\app\src\debug\res
+edu.cit.pangan.pesotracker.app-main-38 Z:\L22X16W15\Project\mobile\app\src\main\res
