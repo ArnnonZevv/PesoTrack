@@ -59,7 +59,7 @@ public class SecurityConfig {
     "http://localhost:3000",
     "http://localhost:5173",
     "https://*.vercel.app",
-    "https://YOUR-EXACT-URL.vercel.app"  // replace with your actual Vercel URL
+    "https://peso-track.vercel.app/login"  // replace with your actual Vercel URL
 ));
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
